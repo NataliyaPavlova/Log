@@ -14,3 +14,4 @@ Requirements:
 -MySQL
 
 You may find the task done here: np12.pythonanywhere.com (till February'19)
+Python 3.7, flask 1.0.2, flask_sqlalchemy 2.3.2, plotly 3.0.0
