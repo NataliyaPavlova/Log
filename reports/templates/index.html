@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+Academic Performance Tracker
+</title>
+
+<body>
+<h1>
+Welcome to the academic performance tracker
+</h1>
+<h3>
+Please choose what you would like to do:
+</h3>
+<ul>
+<div><li> <b>Add Student</b> </li><div> <br>
+ <form action="/add_student" method="post">
+        <div>&nbsp &nbsp &nbsp &nbsp
+            <input autocomplete="off" autofocus name="student_name" placeholder="Student's name" type="text"/>
+        </div></br>&nbsp &nbsp &nbsp &nbsp
+        <button type="submit">Add</button>
+    </form>
+<br><br>
+
+<div><li> <b>Add Discipline</b> </li><div> <br>
+<form action="/add_disc" method="post">
+        <div>&nbsp &nbsp &nbsp &nbsp
+           <input autocomplete="off" autofocus name="discipline" placeholder="Discipline" type="text"/>
+        </div></br>&nbsp &nbsp &nbsp &nbsp
+        <button type="submit">Add</button>
+    </form>
+<br><br>
+
+<div><li><b> Add Mark for Student </b></li><div><br>
+<form action="/add_mark" method="post">
+        <div>&nbsp &nbsp &nbsp &nbsp
+            Add Student's Name: &nbsp <input autofocus name="student_name" placeholder="Student's name" type="text"/>
+        </div></br>
+
+        <div>&nbsp &nbsp &nbsp &nbsp
+            Add Mark: &nbsp <input name="mark" placeholder="Mark" type="text"/>
+        </div></br>
+
+        <div>&nbsp &nbsp &nbsp &nbsp
+            Add Discipline: &nbsp
+        <select name='discipline'>
+                <option selected disabled> Choose discipline </option>
+                {% for disc in list_disc: %}
+                <option value={{disc}}>{{disc}}</option>
+                {% endfor %}
+        </select>
+        </div><br>
+
+        <div>&nbsp &nbsp &nbsp &nbsp
+            Add Date: &nbsp
+        <input type="date" id="date" name="date" value="2018-01-01" min="2018-01-01">
+         </div></br>&nbsp &nbsp &nbsp &nbsp
+        <button type="submit">Add</button>
+    </form>
+<br><br>
+
+
+<div><li> <b>Look marks for the period</b> </li><div><br>
+<form action="/look_marks" method="post">
+        <div>&nbsp &nbsp &nbsp &nbsp
+            Choose Student's Name: &nbsp <input autofocus name="student_name" placeholder="Student's name" type="text"/>
+        </div></br>
+
+         <div>&nbsp &nbsp &nbsp &nbsp
+            Choose Discipline: &nbsp
+        <select name='discipline'>
+                <option selected disabled> Choose discipline </option>
+                {% for disc in list_disc: %}
+                <option  value={{disc}}>{{disc}}</option>
+                {% endfor %}
+        </select>
+        </div><br>
+
+         <div>&nbsp &nbsp &nbsp &nbsp
+            Choose Date Range: &nbsp
+            From: &nbsp <input type="date" id="start" name="start" value="2018-01-01" min="2018-01-01"> &nbsp
+            Till: &nbsp <input type="date" id="finish" name="finish" value="2018-01-01" min="2018-01-01">
+
+       </div></br>
+        &nbsp &nbsp &nbsp &nbsp
+        <button type="submit">Look</button>
+</form>
+<br><br>
+<div><li> <b>Look average marks in the graph </b></li><div><br>
+<form action="/graph" method="post">
+        <div>&nbsp &nbsp &nbsp &nbsp
+            Choose Date Range: &nbsp
+            From: &nbsp <input type="date" id="start" name="start" value="2018-01-01" min="2018-01-01"> &nbsp
+            Till: &nbsp <input type="date" id="finish" name="finish" value="2018-01-01" min="2018-01-01">
+
+       </div></br>
+        &nbsp &nbsp &nbsp &nbsp
+        <button type="submit">Look</button>
+</form>
+</ul>
+
+</body>
+</html>

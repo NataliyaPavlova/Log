@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+Academic Performance Tracker
+</title>
+
+<body>
+<h1>
+Welcome to the academic performance tracker
+</h1>
+<div>
+<p>Student's name: &nbsp; {{student}}</p>
+<p> Discipline: &nbsp; {{discipline}}</p>
+<p> Period from {{start_date}} till {{final_date}}</p>
+</div>
+<div>
+<ul>
+{% for str in reports: %}
+
+    <li>
+    {{str.date}} &nbsp;&nbsp; {{ str.mark }}
+    </li>
+{% endfor %}
+</ul></div>
+<br>
+<div><a href="/">  Back to main page </a></div><br>
+
+</body>
